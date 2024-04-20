@@ -22,7 +22,5 @@ resource "azurerm_storage_account" "fs_mini_sta" {
 
 resource "azurerm_storage_table" "fs_mini_stc" {
   name                 = var.fs_mini.base_table_name
-  storage_account_name = azurerm_storage_account.fs_mini_sta
+  storage_account_name = azurerm_storage_account.fs_mini_sta.name
 }
-
-
