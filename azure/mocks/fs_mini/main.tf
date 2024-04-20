@@ -1,11 +1,5 @@
 locals {
-  ent = [{
-    key = "t1"
-    val = "v1"
-    }, {
-    key = "t2"
-    val = "v2"
-  }]
+  ent = csvdecode(file("${path.module}/local_data/entity.csv"))
 }
 
 data "azurerm_resource_group" "fs_mini_rg" {
