@@ -28,7 +28,7 @@ resource "azurerm_storage_table" "fs_mini_stc" {
 resource "azurerm_storage_table_entity" "base_entities" {
   for_each = {
     for index, ent in local.ent :
-    vm.name => vm
+    ent.key => ent
   }
   storage_account_name = azurerm_storage_account.fs_mini_sta.name
   table_name           = azurerm_storage_table.fs_mini_stc
