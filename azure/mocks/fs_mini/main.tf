@@ -31,7 +31,7 @@ resource "azurerm_storage_table_entity" "base_entities" {
     ent.key => ent
   }
   storage_account_name = azurerm_storage_account.fs_mini_sta.name
-  table_name           = azurerm_storage_table.fs_mini_stc
+  table_name           = azurerm_storage_table.fs_mini_stc.name
   partition_key        = "t1"
   row_key              = each.value.key
 
